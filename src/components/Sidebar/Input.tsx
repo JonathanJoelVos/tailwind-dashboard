@@ -22,7 +22,7 @@ type ControllProps = ComponentProps<'input'>
 export function Controll(props: ControllProps) {
   return (
     <input
-      className="w-full border-0 bg-transparent placeholder-zinc-600"
+      className="bg-transparentplaceholder-zinc-600 w-full border-0 px-2"
       {...props}
     />
   )
