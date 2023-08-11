@@ -1,7 +1,9 @@
 import SettingsTabs from '@/components/SettingsTabs'
 import * as Input from '@/components/Sidebar/Input'
 import * as FileInput from '@/components/Form/FileInput'
-import { Mail, UploadCloud, User } from 'lucide-react'
+import { Mail } from 'lucide-react'
+import Select from '@/components/Form/Select'
+import SelectItem from '@/components/Form/Select/SelectItem'
 
 export default function Home() {
   return (
@@ -107,6 +109,10 @@ export default function Home() {
             >
               Country
             </label>
+            <Select placeholder="Select a country...">
+              <SelectItem value="br" text="Brazil" />
+              <SelectItem value="us" text="US" />
+            </Select>
           </div>
           <div className="grid grid-cols-form gap-3 pt-5">
             <label
@@ -115,6 +121,16 @@ export default function Home() {
             >
               Timezone
             </label>
+            <Select placeholder="Select a timezone...">
+              <SelectItem
+                value="br"
+                text="Pacific Standard Time (UTC - 08:00)"
+              />
+              <SelectItem
+                value="us"
+                text="Pacific Standard Time (UTC - 02:00)"
+              />
+            </Select>
           </div>
           <div className="grid grid-cols-form gap-3 pt-5">
             <label htmlFor="bio" className="text-sm font-medium text-zinc-700">
@@ -137,7 +153,8 @@ export default function Home() {
             </label>
             <FileInput.Root>
               <FileInput.Trigger />
-              <FileInput.Control />
+              <FileInput.Control multiple />
+              <FileInput.FileList />
             </FileInput.Root>
           </div>
           <div className="flex items-center justify-end gap-2 pt-5">
